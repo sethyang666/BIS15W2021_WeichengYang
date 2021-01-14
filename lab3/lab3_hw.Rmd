@@ -94,11 +94,12 @@ mean(large_mammals$sleep_cycle, na.rm = TRUE)
 ```{r}
 max(sleep$sleep_total)
 sleepiest_mammals <- subset(sleep, sleep_total = 19.9)
+sleepiest_mammals
 ```
 #Little brown bat
 
 ```{r}
-
+subset(sleep, sleep_total==19.9)
 ```
 
 ## Push your final code to GitHub!

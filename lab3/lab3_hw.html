@@ -685,8 +685,29 @@ mean(small_mammals$bodywt)</code></pre>
 </ol>
 <pre class="r"><code>max(sleep$sleep_total)</code></pre>
 <pre><code>## [1] 19.9</code></pre>
-<pre class="r"><code>sleepiest_mammals &lt;- subset(sleep, sleep_total = 19.9)</code></pre>
+<pre class="r"><code>sleepiest_mammals &lt;- subset(sleep, sleep_total = 19.9)
+sleepiest_mammals</code></pre>
+<pre><code>## # A tibble: 83 x 11
+##    name  genus vore  order conservation sleep_total sleep_rem sleep_cycle awake
+##    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt;
+##  1 Chee~ Acin~ carni Carn~ lc                  12.1      NA        NA      11.9
+##  2 Owl ~ Aotus omni  Prim~ &lt;NA&gt;                17         1.8      NA       7  
+##  3 Moun~ Aplo~ herbi Rode~ nt                  14.4       2.4      NA       9.6
+##  4 Grea~ Blar~ omni  Sori~ lc                  14.9       2.3       0.133   9.1
+##  5 Cow   Bos   herbi Arti~ domesticated         4         0.7       0.667  20  
+##  6 Thre~ Brad~ herbi Pilo~ &lt;NA&gt;                14.4       2.2       0.767   9.6
+##  7 Nort~ Call~ carni Carn~ vu                   8.7       1.4       0.383  15.3
+##  8 Vesp~ Calo~ &lt;NA&gt;  Rode~ &lt;NA&gt;                 7        NA        NA      17  
+##  9 Dog   Canis carni Carn~ domesticated        10.1       2.9       0.333  13.9
+## 10 Roe ~ Capr~ herbi Arti~ lc                   3        NA        NA      21  
+## # ... with 73 more rows, and 2 more variables: brainwt &lt;dbl&gt;, bodywt &lt;dbl&gt;</code></pre>
 <p>#Little brown bat</p>
+<pre class="r"><code>subset(sleep, sleep_total==19.9)</code></pre>
+<pre><code>## # A tibble: 1 x 11
+##   name  genus vore  order conservation sleep_total sleep_rem sleep_cycle awake
+##   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt;
+## 1 Litt~ Myot~ inse~ Chir~ &lt;NA&gt;                19.9         2         0.2   4.1
+## # ... with 2 more variables: brainwt &lt;dbl&gt;, bodywt &lt;dbl&gt;</code></pre>
 </div>
 <div id="push-your-final-code-to-github" class="section level2">
 <h2>Push your final code to GitHub!</h2>
