@@ -93,7 +93,7 @@ mean(large_mammals$sleep_cycle, na.rm = TRUE)
 10. Which animal is the sleepiest among the entire dataframe?
 ```{r}
 max(sleep$sleep_total)
-sleepiest_mammals <- subset(sleep, sleep_total = 19.9)
+sleepiest_mammals <- subset(sleep, sleep_total == 19.9)
 sleepiest_mammals
 ```
 #Little brown bat
