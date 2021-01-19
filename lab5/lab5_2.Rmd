@@ -36,7 +36,9 @@ superhero_powers <- readr::read_csv("data/super_hero_powers.csv", na = c("", "-9
 ## Data tidy
 1. Some of the names used in the `superhero_info` data are problematic so you should rename them here.  
 ```{r}
-
+names(superhero_info)
+superhero_info <- select_all(superhero_info, tolower)
+superhero_info <- select_all(superhero_info,~str_replace(.,"","_"))
 ```
 
 Yikes! `superhero_powers` has a lot of variables that are poorly named. We need some R superpowers...
