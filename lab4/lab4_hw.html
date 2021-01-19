@@ -679,24 +679,43 @@ carnivores_mean</code></pre>
 <pre><code>## mean.hra.m2 
 ##         NaN</code></pre>
 <p><strong>9. Make a new dataframe <code>deer</code> that is limited to the mean mass, log10 mass, family, genus, and species of deer in the database. The family for deer is cervidae. Arrange the data in descending order by log10 mass. Which is the largest deer? What is its common name?</strong></p>
-<pre class="r"><code>deer &lt;- select(homerange,&quot;mean.mass.g&quot;,&quot;log10.mass&quot;,&quot;family&quot;,&quot;genus&quot;,&quot;species&quot;)
+<pre class="r"><code>deer &lt;- select(homerange,&quot;mean.mass.g&quot;,&quot;log10.mass&quot;,&quot;family&quot;,&quot;genus&quot;,&quot;species&quot;,&quot;common.name&quot;)
 deer &lt;- filter(deer,family==&quot;cervidae&quot;)
 deer</code></pre>
-<pre><code>## # A tibble: 12 x 5
-##    mean.mass.g log10.mass family   genus      species    
-##          &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt;      
-##  1     307227.       5.49 cervidae alces      alces      
-##  2      62823.       4.80 cervidae axis       axis       
-##  3      24050.       4.38 cervidae capreolus  capreolus  
-##  4     234758.       5.37 cervidae cervus     elaphus    
-##  5      29450.       4.47 cervidae cervus     nippon     
-##  6      71450.       4.85 cervidae dama       dama       
-##  7      13500.       4.13 cervidae muntiacus  reevesi    
-##  8      53864.       4.73 cervidae odocoileus hemionus   
-##  9      87884.       4.94 cervidae odocoileus virginianus
-## 10      35000.       4.54 cervidae ozotoceros bezoarticus
-## 11       7500.       3.88 cervidae pudu       puda       
-## 12     102059.       5.01 cervidae rangifer   tarandus</code></pre>
+<pre><code>## # A tibble: 12 x 6
+##    mean.mass.g log10.mass family   genus      species     common.name      
+##          &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt;       &lt;chr&gt;            
+##  1     307227.       5.49 cervidae alces      alces       moose            
+##  2      62823.       4.80 cervidae axis       axis        chital           
+##  3      24050.       4.38 cervidae capreolus  capreolus   roe deer         
+##  4     234758.       5.37 cervidae cervus     elaphus     red deer         
+##  5      29450.       4.47 cervidae cervus     nippon      sika deer        
+##  6      71450.       4.85 cervidae dama       dama        fallow deer      
+##  7      13500.       4.13 cervidae muntiacus  reevesi     Reeves&#39;s muntjac 
+##  8      53864.       4.73 cervidae odocoileus hemionus    mule deer        
+##  9      87884.       4.94 cervidae odocoileus virginianus white-tailed deer
+## 10      35000.       4.54 cervidae ozotoceros bezoarticus pampas deer      
+## 11       7500.       3.88 cervidae pudu       puda        pudu             
+## 12     102059.       5.01 cervidae rangifer   tarandus    reindeer</code></pre>
+<pre class="r"><code>arrange(deer, &#39;mean.hra.m2&#39;)</code></pre>
+<pre><code>## # A tibble: 12 x 6
+##    mean.mass.g log10.mass family   genus      species     common.name      
+##          &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt;       &lt;chr&gt;            
+##  1     307227.       5.49 cervidae alces      alces       moose            
+##  2      62823.       4.80 cervidae axis       axis        chital           
+##  3      24050.       4.38 cervidae capreolus  capreolus   roe deer         
+##  4     234758.       5.37 cervidae cervus     elaphus     red deer         
+##  5      29450.       4.47 cervidae cervus     nippon      sika deer        
+##  6      71450.       4.85 cervidae dama       dama        fallow deer      
+##  7      13500.       4.13 cervidae muntiacus  reevesi     Reeves&#39;s muntjac 
+##  8      53864.       4.73 cervidae odocoileus hemionus    mule deer        
+##  9      87884.       4.94 cervidae odocoileus virginianus white-tailed deer
+## 10      35000.       4.54 cervidae ozotoceros bezoarticus pampas deer      
+## 11       7500.       3.88 cervidae pudu       puda        pudu             
+## 12     102059.       5.01 cervidae rangifer   tarandus    reindeer</code></pre>
+</div>
+<div id="largestalces-common.namemoose" class="section level1">
+<h1>largest:alces common.name:moose</h1>
 <p><strong>10. As measured by the data, which snake species has the smallest homerange? Show all of your work, please. Look this species up online and tell me about it!</strong> <strong>Snake is found in taxon column</strong></p>
 <pre class="r"><code>names(homerange)</code></pre>
 <pre><code>##  [1] &quot;taxon&quot;                      &quot;common.name&quot;               

@@ -386,28 +386,52 @@ herbivores_mean
 **9. Make a new dataframe `deer` that is limited to the mean mass, log10 mass, family, genus, and species of deer in the database. The family for deer is cervidae. Arrange the data in descending order by log10 mass. Which is the largest deer? What is its common name?**  
 
 ```r
-deer <- select(homerange,"mean.mass.g","log10.mass","family","genus","species")
+deer <- select(homerange,"mean.mass.g","log10.mass","family","genus","species","common.name")
 deer <- filter(deer,family=="cervidae")
 deer
 ```
 
 ```
-## # A tibble: 12 x 5
-##    mean.mass.g log10.mass family   genus      species    
-##          <dbl>      <dbl> <chr>    <chr>      <chr>      
-##  1     307227.       5.49 cervidae alces      alces      
-##  2      62823.       4.80 cervidae axis       axis       
-##  3      24050.       4.38 cervidae capreolus  capreolus  
-##  4     234758.       5.37 cervidae cervus     elaphus    
-##  5      29450.       4.47 cervidae cervus     nippon     
-##  6      71450.       4.85 cervidae dama       dama       
-##  7      13500.       4.13 cervidae muntiacus  reevesi    
-##  8      53864.       4.73 cervidae odocoileus hemionus   
-##  9      87884.       4.94 cervidae odocoileus virginianus
-## 10      35000.       4.54 cervidae ozotoceros bezoarticus
-## 11       7500.       3.88 cervidae pudu       puda       
-## 12     102059.       5.01 cervidae rangifer   tarandus
+## # A tibble: 12 x 6
+##    mean.mass.g log10.mass family   genus      species     common.name      
+##          <dbl>      <dbl> <chr>    <chr>      <chr>       <chr>            
+##  1     307227.       5.49 cervidae alces      alces       moose            
+##  2      62823.       4.80 cervidae axis       axis        chital           
+##  3      24050.       4.38 cervidae capreolus  capreolus   roe deer         
+##  4     234758.       5.37 cervidae cervus     elaphus     red deer         
+##  5      29450.       4.47 cervidae cervus     nippon      sika deer        
+##  6      71450.       4.85 cervidae dama       dama        fallow deer      
+##  7      13500.       4.13 cervidae muntiacus  reevesi     Reeves's muntjac 
+##  8      53864.       4.73 cervidae odocoileus hemionus    mule deer        
+##  9      87884.       4.94 cervidae odocoileus virginianus white-tailed deer
+## 10      35000.       4.54 cervidae ozotoceros bezoarticus pampas deer      
+## 11       7500.       3.88 cervidae pudu       puda        pudu             
+## 12     102059.       5.01 cervidae rangifer   tarandus    reindeer
 ```
+
+```r
+arrange(deer, 'mean.hra.m2')
+```
+
+```
+## # A tibble: 12 x 6
+##    mean.mass.g log10.mass family   genus      species     common.name      
+##          <dbl>      <dbl> <chr>    <chr>      <chr>       <chr>            
+##  1     307227.       5.49 cervidae alces      alces       moose            
+##  2      62823.       4.80 cervidae axis       axis        chital           
+##  3      24050.       4.38 cervidae capreolus  capreolus   roe deer         
+##  4     234758.       5.37 cervidae cervus     elaphus     red deer         
+##  5      29450.       4.47 cervidae cervus     nippon      sika deer        
+##  6      71450.       4.85 cervidae dama       dama        fallow deer      
+##  7      13500.       4.13 cervidae muntiacus  reevesi     Reeves's muntjac 
+##  8      53864.       4.73 cervidae odocoileus hemionus    mule deer        
+##  9      87884.       4.94 cervidae odocoileus virginianus white-tailed deer
+## 10      35000.       4.54 cervidae ozotoceros bezoarticus pampas deer      
+## 11       7500.       3.88 cervidae pudu       puda        pudu             
+## 12     102059.       5.01 cervidae rangifer   tarandus    reindeer
+```
+
+#	largest:alces	common.name:moose
 
 **10. As measured by the data, which snake species has the smallest homerange? Show all of your work, please. Look this species up online and tell me about it!** **Snake is found in taxon column**    
 

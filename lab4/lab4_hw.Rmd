@@ -93,10 +93,13 @@ herbivores_mean
 
 **9. Make a new dataframe `deer` that is limited to the mean mass, log10 mass, family, genus, and species of deer in the database. The family for deer is cervidae. Arrange the data in descending order by log10 mass. Which is the largest deer? What is its common name?**  
 ```{r}
-deer <- select(homerange,"mean.mass.g","log10.mass","family","genus","species")
+deer <- select(homerange,"mean.mass.g","log10.mass","family","genus","species","common.name")
 deer <- filter(deer,family=="cervidae")
 deer
+arrange(deer, 'mean.hra.m2')
 ```
+
+#	largest:alces	common.name:moose
 
 **10. As measured by the data, which snake species has the smallest homerange? Show all of your work, please. Look this species up online and tell me about it!** **Snake is found in taxon column**    
 ```{r}
